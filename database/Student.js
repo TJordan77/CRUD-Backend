@@ -28,5 +28,12 @@ const Student = db.define("student", {
         type: DataTypes.STRING,
         defaultValue: "https://enter.your.url/here.jpg",
     },
-    }
-);
+    gpa: {
+        type: DataTypes.FLOAT,
+        validate: {
+            min: 0.0,
+            max: 4.0,
+        },
+    },
+});
+module.exports = Student;
