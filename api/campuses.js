@@ -7,7 +7,7 @@ router.get("/", async (req, res, next) => {
     try {
         const campuses = await Campus.findAll({include: Student});
         //Campus ? res.json(campuses): res.sendStatus(404); //Shortcut if/else statement lol
-        res.json(campuses);
+        res.json(campuses);   
     } catch (err) {
       next(err);
     }
