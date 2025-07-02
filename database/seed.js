@@ -1,5 +1,4 @@
 const db = require("./db");
-const { Duck } = require("./index");
 const { Campus, Student } = require("./index");
 
 const seed = async () => {
@@ -10,8 +9,8 @@ const seed = async () => {
     { name: "Main Building", address: "199 Chambers St, New York, NY 10007", imageUrl: "https://placehold.co/200x200", description: "Main Building of Borough of Manhattan Community College." },
   ]);
   const students = await Student.bulkCreate([
-    { firstName: "Allan", lastName: "James Lapid", email: "alice@example.com", campusId: campuses[0].id },
-    { firstName: "Finn", lastName: "Instructor", email: "bob@example.com", campusId: campuses[1].id },
+    { firstName: "Allan", lastName: "James Lapid", email: "allan@example.com", campusId: campuses[0].id },
+    { firstName: "Finn", lastName: "Instructor", email: "finn@example.com", campusId: campuses[1].id },
   ]);
 console.log("Seeded database with campuses");
 db.close();
