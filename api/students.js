@@ -24,4 +24,24 @@ router.get("/:id", async (req, res, next) => {
 
 });
 
+// POST Student
+router.post("/", async (req, res, next) => {
+  try {
+    const newStudent = await Student.create(req.body);
+    res.status(201).json(newStudent);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE Students
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const deleted = await Student.destroy({where: {id: req.params.id}});
+    deleted ? res.sendStatus(204) : res.status(404).send("Student not found");
+  } catch (err) {
+    next(err);
+  }
+})
+
 module.exports = router;
