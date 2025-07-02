@@ -1,5 +1,4 @@
 const db = require("./db");
-const Duck = require("./duck");
 const Campus = require("./campus");
 const Student = require("./student");
 
@@ -8,7 +7,6 @@ Student.belongsTo(Campus);
 
 module.exports = {
   db,
-  Duck,
   Campus,
   Student,
 };
