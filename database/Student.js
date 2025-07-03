@@ -26,7 +26,7 @@ const Student = db.define("student", {
     },
     imageUrl: {
         type: DataTypes.STRING,
-        defaultValue: "https://picsum.photos/seed/picsum/200/300",
+        defaultValue: "https://placehold.co/200x200",
     },
     gpa: {
         type: DataTypes.FLOAT,
