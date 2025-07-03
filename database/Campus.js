@@ -11,7 +11,7 @@ const Campus = db.define("campus", {
   },
   imageUrl: {
     type: DataTypes.STRING,
-    defaultValue: "https://picsum.photos/seed/picsum/200/300",
+    defaultValue: "https://placehold.co/600x400",
   },
   address: {
     type: DataTypes.STRING,
