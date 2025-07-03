@@ -16,12 +16,8 @@ router.get("/", async (req, res, next) => {
 // Single Campus
 router.get("/:id", async (req, res, next) => {
   try {
-    const campus = await Campus.findByPk(req.params.id, {include: Student, }); //minor fix: findbyPK
-    if (campus) {
-      res.json(campus);
-    } else {
-      res.sendStatus(404);
-    }
+    const campus = await Campus.findByPk(req.params.id, {include: Student}); //minor fix: findbyPK
+    campus ? res.json(campus) : res.sendStatus(404); 
   } catch (err) {
     next(err);
   }
@@ -47,6 +43,7 @@ router.delete("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
 // PUT Campus for updating campus infos
 router.put("/:id", async (req, res, next) => {
   try {
