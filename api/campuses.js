@@ -43,5 +43,24 @@ router.delete("/:id", async (req, res, next) => {
     next(err);
   }
 });
+// PUT Campus for updating campus infos
+router.put("/:id", async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id);
+    if (campus) {
+      await campus.update({
+        name: req.body.name,
+        address: req.body.address,
+        description: req.body.description,
+        imageUrl: req.body.imageUrl,
+      });
+      res.json(campus);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;

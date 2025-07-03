@@ -5,7 +5,7 @@ const seed = async () => {
   try {
     await db.sync({ force: true });
 
-    // 🏫 Create DuckTales campuses
+    // Create DuckTales campuses
     const campuses = await Campus.bulkCreate([
       {
         name: "Duckburg University",
@@ -21,7 +21,7 @@ const seed = async () => {
       },
     ]);
 
-    // 🎓 Create DuckTales students
+    // Create DuckTales students
     const students = await Student.bulkCreate([
       {
         firstName: "Huey",
