@@ -11,6 +11,7 @@ const Campus = db.define("campus", {
   },
   imageUrl: {
     type: DataTypes.STRING,
+    allowNull: true,
     defaultValue: "https://placehold.co/600x400",
   },
   address: {

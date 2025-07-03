@@ -26,6 +26,7 @@ const Student = db.define("student", {
     },
     imageUrl: {
         type: DataTypes.STRING,
+        allowNull: true,
         defaultValue: "https://placehold.co/200x200",
     },
     gpa: {
