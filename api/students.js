@@ -16,7 +16,7 @@ router.get("/", async (req, res, next) => {
 // All the Single Students! All the Single Students!
 router.get("/:id", async (req, res, next) => {
   try {
-    const student = await Student.findbyPK(req.params.id, {include: Campus});
+    const student = await Student.findByPK(req.params.id, {include: Campus});
     student ? res.json(student): res.sendStatus(404);  //Shortcut if/else statement lol
   } catch (err) {
     next(err);
